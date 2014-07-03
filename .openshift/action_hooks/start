@@ -1,0 +1,9 @@
+#!/bin/bash
+# The logic to start up your application should be put in this
+# script. The application will work only if it binds to
+# $OPENSHIFT_DIY_IP:8080
+echo $OPENSHIFT_DIY_IP $OPENSHIFT_DIY_PORT
+cd $OPENSHIFT_REPO_DIR/felix-framework-4.4.0
+export felixcmd="java -jar bin/felix.jar"
+echo "Command Line: $felixcmd"
+nohup $felixcmd &
