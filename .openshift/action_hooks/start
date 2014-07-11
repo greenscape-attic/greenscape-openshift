@@ -4,6 +4,6 @@
 # $OPENSHIFT_DIY_IP:8080
 echo $OPENSHIFT_DIY_IP $OPENSHIFT_DIY_PORT
 cd $OPENSHIFT_REPO_DIR/felix-framework-4.4.0
-export felixcmd="java -Dopenshift.host=$OPENSHIFT_DIY_IP -Dopenshift.port=$OPENSHIFT_DIY_PORT -jar bin/felix.jar"
+export felixcmd="java -Dopenshift.host=$OPENSHIFT_DIY_IP -Dopenshift.port=$OPENSHIFT_DIY_PORT -Dfelix.fileinstall.dir=./conf -Dfelix.fileinstall.noInitialDelay=false -Djetty.home.bundle=org.eclipse.jetty.osgi.boot -jar bin/felix.jar"
 echo "Command Line: $felixcmd"
 nohup $felixcmd &
